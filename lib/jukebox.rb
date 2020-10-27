@@ -13,7 +13,7 @@ songs = [
 ]
 
 def phrase
- p "Please enter a song name or number:"
+ puts "Please enter a song name or number:"
 
 end
 def help
@@ -36,8 +36,10 @@ def play(songs)
   puts "Please enter a song name or number:"
   input=gets.strip
   #binding.pry
-  if input== songs
-    puts "Playing #{list[song]}"
+  if songs.include?(input)
+    puts "Playing #{input}"
+  elsif input==Integer 
+   puts "Playing #{songs.at(input.to_i - 1)}"
   else
     puts "Invalid input, please try again"
     
